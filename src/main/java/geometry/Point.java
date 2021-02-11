@@ -5,7 +5,6 @@ import org.jetbrains.annotations.Contract;
 public class Point implements Cloneable, Comparable<Point> {
 
     public double x, y;
-
     @Override
     public boolean equals(Object o) {
         if (this == o)

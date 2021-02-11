@@ -28,21 +28,6 @@ public class DividingChain {
     }
 
     public DividingChain(List<Line2D> chain) {
-        List<Point> chainPoints = new LinkedList<>();
-        for (int i = 0; i < chain.size() - 1; ++i) {
-            chainPoints.add(chain.get(i).p1);
-            if (i > 0) {
-                if (chainPoints.get(i).y > chainPoints.get(i - 1).y) {
-//                    throw new RuntimeException("Not monotone chain." + chainPoints.toString());
-                }
-            }
-        }
-        chainPoints.add(chain.get(chain.size() - 1).p2);
-        if (chainPoints.size() > 1) {
-            if (chainPoints.get(chainPoints.size() - 1).y > chainPoints.get(chainPoints.size() - 2).y) {
-//                throw new RuntimeException("Not monotone chain.");
-            }
-        }
         this.chain = chain;
     }
 

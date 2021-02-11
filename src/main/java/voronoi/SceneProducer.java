@@ -69,11 +69,13 @@ public class SceneProducer {
                 pts.add(new Point(3.5, 2.1));
                 pts.add(new Point(4.0, 2.4));
                 pts.add(new Point(4.5, 3.5));
+                pts.add(new Point(3.5, 3.5));
+                pts.add(new Point(3.0, 3.0));
                 break;
             }
             //random points
             default: {
-                int n = 1000;
+                int n = 100;
                 for (int i = 0; i < n; i++) pts.add(new Point(-2 + r.nextFloat() * 4, -2 + r.nextFloat() * 4));
                 break;
             }

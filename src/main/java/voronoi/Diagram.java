@@ -179,10 +179,10 @@ class Diagram {
         }
         throw new RuntimeException("Merging overflow");
     }
-    void draw(Canvas pap, boolean drawTraceRay, boolean drawOpenedCells, String txt) {
-        draw(pap, drawTraceRay, drawOpenedCells, txt, null);
+    void draw(Canvas pap, boolean drawTraceRay, boolean drawOpenedCells, String canvasHeader) {
+        draw(pap, drawTraceRay, drawOpenedCells, canvasHeader, null);
     }
-    void draw(Canvas pap, boolean drawTraceRay, boolean drawOpenedCells, String txt, Point p) {
+    void draw(Canvas pap, boolean drawTraceRay, boolean drawOpenedCells, String canvasHeader, Point p) {
         synchronized (pap.figures) {
             pap.clear();
             for (Map.Entry<Point, CellIterator> siteCell : cell.entrySet()) {
@@ -204,7 +204,7 @@ class Diagram {
                 } while (n != n0);
             }
             if (drawTraceRay && chain != null) for (Line2D l : chain.getChain()) pap.addLine(l, Color.RED, true);
-            pap.addText(txt,5,15,Color.BLACK);
+            pap.addText(canvasHeader,5,15,Color.BLACK);
         }
         pap.repaint();
     }
